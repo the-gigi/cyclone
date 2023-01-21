@@ -7,9 +7,9 @@ when you clone a git repository via the console.
 
 To clone a repository from Github or Gitlab you do the following:
 
-1. copy the repository's URL to your clipboard
+1. Copy the repository's URL to your clipboard
 2. Go to your console
-3. type "git clone " 
+3. Type "git clone " 
 4. Paste the URL from your clipboard
 
 WHAT IF YOU DIDN'T HAVE TO TYPE "git clone " EVER AGAIN ?!?!?! 🤯
