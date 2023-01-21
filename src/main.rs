@@ -7,7 +7,7 @@ fn main() {
     println!("Cyclone 🌀 is running...");
     let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
     loop {
-        let data = ctx.get_contents().unwrap();
+        let data = ctx.get_contents().unwrap_or("".to_string());
         if data.starts_with("git@") {
             let modified_data = "git clone ".to_owned() + &data;
             println!("modified clipboard: {modified_data}");

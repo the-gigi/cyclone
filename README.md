@@ -63,22 +63,23 @@ $ cargo install --path .
 Then, use Launchd to launch it automatically on reboot by running the following commands:
 
 ```
-$ cat cyclone.plist | sed s/{whoami}/$(whoami)/g > $TMPDIR/cyclone.plist
-$ sudo cp $TMPDIR/cyclone.plist /Library/LaunchDaemons
+$ cat local.cyclone.plist | sed s/{whoami}/$(whoami)/g > $TMPDIR/local.cyclone.plist
+$ sudo cp $TMPDIR/cyclone.plist ~/Library/LaunchAgents
 ```
 
 From now on, Cyclone🌀 will monitor your clipboard even if you reboot. 
 
-For the first time (if you don't want to reboot) you can launch ot directly:
+For the first time (if you don't want to reboot) you can launch it directly:
 
 ```
-$ launchctl bootstrap user/cyclone
+$ launchctl load ~/Library/LaunchAgents/local.cyclone.plist
 ```
 
 To uninstall Cyclone🌀 run the following command:
 
 ```
-$ sudo rm /Library/LaunchDaemons/cyclone.plist
+$ launchctl unload ~/Library/LaunchAgents/local.cyclone.plist
+$ rm ~/Library/LaunchAgenets/local.cyclone.plist
 ```
 
 Enjoy! 🥳 
