@@ -10,9 +10,9 @@ fn main() {
         let data = ctx.get_contents().unwrap_or("".to_string());
         if data.starts_with("git@") {
             let modified_data = "git clone ".to_owned() + &data;
-            println!("modified clipboard: {modified_data}");
             ctx.set_contents(modified_data).unwrap();
         }
         sleep(Duration::from_secs(1));
     }
 }
+
